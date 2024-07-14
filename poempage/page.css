@@ -3,6 +3,12 @@ body {
     padding: 0;
     font-family: 'Roboto', sans-serif;
     background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: auto; /* Allow scrolling */
+    position: relative; /* Ensure the background can be positioned correctly */
 }
 
 .background {
@@ -11,10 +17,10 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('https://example.com/background.jpg'); /* Replace with your background image URL */
+    background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url('your-image.jpg');
     background-size: cover;
     background-position: center;
-    opacity: 0.2;
+    opacity: 0.4;
     z-index: -1;
 }
 
@@ -22,41 +28,53 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
     padding: 20px;
+    animation: fadeIn 1s ease-out;
+    /* Adjust to prevent overflow and allow scrolling */
+    max-width: 100%;
+    max-height: 100%;
+    box-sizing: border-box;
+    overflow: auto;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 .content {
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     padding: 40px;
     max-width: 800px;
     text-align: left;
     width: 100%;
     box-sizing: border-box;
+    border: 1px solid #ddd;
 }
 
 h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 2.5em;
-    margin-bottom: 10px;
+    font-size: 2.8em;
+    margin-bottom: 15px;
+    color: #222;
     text-align: center;
 }
 
 h2 {
     font-family: 'Playfair Display', serif;
-    font-size: 1.5em;
-    margin-bottom: 20px;
-    color: #666;
+    font-size: 1.6em;
+    margin-bottom: 25px;
+    color: #555;
     text-align: center;
 }
 
 p {
-    font-size: 1.1em;
-    line-height: 1.6em;
-    color: #333;
-    margin-bottom: 20px;
+    font-size: 1.2em;
+    line-height: 1.8em;
+    color: #444;
+    margin-bottom: 25px;
 }
 
 p br {
@@ -70,15 +88,15 @@ p br {
     }
 
     h1 {
-        font-size: 2em;
+        font-size: 2.2em;
     }
 
     h2 {
-        font-size: 1.2em;
+        font-size: 1.4em;
     }
 
     p {
-        font-size: 1em;
+        font-size: 1.1em;
     }
 }
 
@@ -88,14 +106,14 @@ p br {
     }
 
     h1 {
-        font-size: 1.5em;
+        font-size: 1.8em;
     }
 
     h2 {
-        font-size: 1em;
+        font-size: 1.1em;
     }
 
     p {
-        font-size: 0.9em;
+        font-size: 1em;
     }
 }
